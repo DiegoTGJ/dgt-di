@@ -3,7 +3,7 @@ package diego.spring.di.controllers;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import diego.spring.di.services.GreetingServiceImpl;
+import diego.spring.di.services.ConstructorGreetingServiceImpl;
 
 class ConstructorInjectedControllerTest {
 	
@@ -11,7 +11,7 @@ class ConstructorInjectedControllerTest {
 	
 	@BeforeEach
 	void setUp() throws Exception {
-		controller = new ConstructorInjectedController(new GreetingServiceImpl());
+		controller = new ConstructorInjectedController(new ConstructorGreetingServiceImpl());
 	}
 
 	@Test
