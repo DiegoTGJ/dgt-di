@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
 import diego.spring.di.controllers.ConstructorInjectedController;
+import diego.spring.di.controllers.I18nController;
 import diego.spring.di.controllers.MyController;
 import diego.spring.di.controllers.PropertyInjectedController;
 import diego.spring.di.controllers.SetterInjectedController;
@@ -14,6 +15,10 @@ public class DgtDiApplication {
 
 	public static void main(String[] args) {
 		ApplicationContext ctx = SpringApplication.run(DgtDiApplication.class, args);
+		
+		
+		I18nController i18nController = (I18nController) ctx.getBean("i18nController");
+		System.out.println(i18nController.sayHello());
 		
 		MyController myController = (MyController) ctx.getBean("myController");
 
